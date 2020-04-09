@@ -2,6 +2,9 @@ package ru.netology.domain;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import ru.netology.manager.AfishaManager;
+
+
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
@@ -28,7 +31,7 @@ class AfishaManagerTest {
     }
 
     @Test
-    public void showAll() {
+    public void shouldShowAll() {
         Film[] actual = manager.getLastAdded(7);
         Film[] expected = {
                 new Film(33, "Dunkerk", "action"),
@@ -43,25 +46,25 @@ class AfishaManagerTest {
     }
 
     @Test
-    public void showMoreThanMax() {
+    public void shouldShowMoreThanMax() {
         Film[] actual = manager.getLastAdded(50);
         assertArrayEquals(expected, actual);
     }
 
     @Test
-    public void showNothing() {
+    public void shouldShowNothing() {
         Film[] actual = manager.getLastAdded(0);
         assertArrayEquals(expected, actual);
     }
 
     @Test
-    public void showNegative() {
+    public void shouldShowNegative() {
         Film[] actual = manager.getLastAdded(-1);
         assertArrayEquals(expected, actual);
     }
 
     @Test
-    public void showAboveMax() {
+    public void shouldShowAboveMax() {
         Film[] actual = manager.getLastAdded(11);
         assertArrayEquals(expected, actual);
     }
