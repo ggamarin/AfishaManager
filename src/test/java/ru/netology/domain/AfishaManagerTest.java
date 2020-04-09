@@ -31,7 +31,6 @@ class AfishaManagerTest {
     }
 
     @Test
-
     public void shouldShowPositive() {
         Film[] actual = manager.getLastAdded(7);
         Film[] expected = {
