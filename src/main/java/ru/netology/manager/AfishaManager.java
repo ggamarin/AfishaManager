@@ -4,9 +4,9 @@ import ru.netology.domain.Film;
 import ru.netology.repository.AfishaRepository;
 
 public class AfishaManager {
-    private final AfishaRepository repository = new AfishaRepository();
-
-    public AfishaManager() {
+    private AfishaRepository repository;
+    public AfishaManager(AfishaRepository repository) {
+        this.repository = repository;
     }
 
     public void addFilm(Film film) {

@@ -98,15 +98,6 @@ class AfishaRepositoryTest {
 
     @Test
     void shouldRemoveByNotExistId(){
-        repository.removeById(7);
-        Film[] expected = {
-                new Film(1, "Bloodshot", "action"),
-                new Film(2, "The Gentlemen", "action"),
-                new Film(3, "Invisible Man", "horror"),
-                new Film(4, "Number One", "comedy"),
-                new Film(5, "Interstellar", "sci-fi")
-        };
-        Film[] actual = repository.findAll();
-        assertArrayEquals(expected,actual);
+        assertThrows(ArrayIndexOutOfBoundsException.class,() -> repository.removeById(88));
         }
     }
